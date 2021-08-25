@@ -1,0 +1,36 @@
+/*
+    Пример подключения шрифта woff/woff2
+    https://css-tricks.com/snippets/css/using-font-face/
+
+    @include fontFace('ProximaNova', '../fonts/ProximaNova-Regular/ProximaNova-Regular');
+*/
+
+@include fontFace('Lato-Black', '../../../fonts/Lato/latoblack');
+@include fontFace('Lato-Black-Italic', '../../fonts/Lato/latoblackitalic');
+
+@include fontFace('Lato-Bold', '../../../fonts/Lato/latobold');
+@include fontFace('Lato-Bold-Italic', '../../../fonts/Lato/latobolditalic');
+
+@include fontFace('Lato-Hairline', '../../../fonts/Lato/latohairline');
+@include fontFace('Lato-Hairline-Italic', '../../../fonts/Lato/latohairlineitalic');
+
+@include fontFace('Lato-Heavy', '../../../fonts/Lato/latoheavy');
+@include fontFace('Lato-Heavy-Italic', '../../../fonts/Lato/latoheavyitalic');
+
+
+@include fontFace('Lato-Light', '../../../fonts/Lato/latolight');
+@include fontFace('Lato-Light-Italic', '../../../fonts/Lato/latolightitalic');
+
+@include fontFace('Lato-Medium', '../../../fonts/Lato/latomedium.ttf');
+@include fontFace('Lato-Medium-Italic', '../../../fonts/Lato/latomediumitalic.ttf');
+
+
+@include fontFace('Lato-Regular', '../../../fonts/Lato/latoregular');
+@include fontFace('Lato-Italic', '../../../fonts/Lato/latoitalic');
+
+@include fontFace('Lato-Semibold', '../../../fonts/Lato/latosemibold');
+@include fontFace('Lato-Semibold-Italic', '../../../fonts/Lato/latosemibolditalic');
+
+@include fontFace('Lato-Thin', '../../../fonts/Lato/latothin');
+@include fontFace('Lato-Thin-Italic', '../../../fonts/Lato/latothinitalic');
+

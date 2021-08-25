@@ -1,0 +1,537 @@
+@import "../basis/vars";
+@import "../basis/mixins";
+
+.header {
+  background-color: $color-jet;
+
+  @include breakpoint($mobile-width) {
+    position: relative;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
+  &__menu-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 2px solid $color-white;
+    transition: all 0.3s ease-in-out;
+
+    @include breakpoint($mobile-width) {
+      display: flex;
+    }
+
+    &:hover {
+      border-color: $color-green-sheen;
+
+      .header__menu-btn-icon {
+        fill: $color-green-sheen;
+      }
+
+      &--active {
+        border-color: $color-green-sheen;
+
+        .header__menu-btn-icon {
+          fill: $color-green-sheen;
+        }
+      }
+    }
+  }
+
+  &__menu-btn-icon {
+    width: 2.5rem;
+    fill: $color-white;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 6.2rem;
+  transition: all .3s ease-in-out;
+
+  @include breakpoint($mobile-width) {
+    max-height: 0;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    overflow: hidden;
+    background-color: $color-jet;
+  }
+
+  &--active {
+    display: flex;
+    max-height: calc(100vh - 9.5rem);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid $color-green-sheen;
+  }
+
+  &__list {
+    display: flex;
+
+    @include breakpoint($mobile-width) {
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__item {
+    @include breakpoint($mobile-width) {
+      text-align: center;
+    }
+
+    & + & {
+      margin-left: 3.6rem;
+
+      @include breakpoint($mobile-width) {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 1.6rem;
+    color: $color-white;
+    transition: all 0.3s ease-in-out;
+
+    @include breakpoint($mobile-width) {
+      display: block;
+      padding: 1rem 0;
+    }
+
+    &:hover {
+      color: $color-green-sheen;
+    }
+  }
+}
+
+.logo {
+  margin-right: 3.6rem;
+  padding-right: 3rem;
+  border-right: 1px solid $color-black-olive;
+
+  &__link {
+    display: block;
+  }
+}
+
+.socials {
+  display: flex;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 2px solid $color-white;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border-color: $color-green-sheen;
+
+      .socials__icon {
+        fill: $color-green-sheen;
+      }
+    }
+
+    & + & {
+      margin-left: 1rem;
+
+      @include breakpoint($mobile-width) {
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  &__icon {
+    fill: $color-white;
+    width: 1.8rem;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.main {
+  background-image: url(../../../img/slider_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 58rem;
+
+    @include breakpoint($mobile-width) {
+      min-height: 38rem;
+    }
+  }
+
+  &__title {
+    max-width: 58rem;
+    font-size: 3.5rem;
+    line-height: 7rem;
+    text-transform: uppercase;
+
+    @include breakpoint($mobile-width) {
+      font-size: 2.5rem;
+      line-height: 5rem;
+    }
+  }
+
+  &__title-text {
+    padding: 1rem 3rem 1rem 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: -3rem 0 0 rgba(255, 255, 255, 0.5),
+      3rem 0 0 rgba(255, 255, 255, 0.5);
+
+    @include breakpoint($mobile-width) {
+      padding: 0.5rem;
+      box-shadow: -0.5rem 0 0 rgba(255, 255, 255, 0.5),
+        0.5rem 0 0 rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+.features {
+  padding: 10.5rem 0;
+  background-color: $color-cultured;
+
+  @include breakpoint($mobile-width) {
+    padding: 5.5rem 0;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 9rem 8rem;
+
+    @include breakpoint($tablet-width) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 6rem;
+    }
+
+    @include breakpoint($mobile-width) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 3rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+
+    @include breakpoint($mobile-width) {
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      border: 1px solid $color-green-sheen;
+      border-radius: 6px;
+      text-align: center;
+    }
+  }
+
+  &__item-img {
+    margin-right: 4rem;
+
+    @include breakpoint($mobile-width) {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 2rem;
+    font-family: $Lato-Bold;
+    font-size: 2.2rem;
+    color: $color-sonic-silver;
+  }
+
+  &__item-text {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: $color-spanish-gray;
+  }
+
+  &__item-link {
+    font-size: 1.5rem;
+    color: $color-old-silver;
+    transition: all 0.3s ease-in-out;
+
+    @include breakpoint($mobile-width) {
+      color: $color-green-sheen;
+    }
+
+    &:hover {
+      color: $color-green-sheen;
+    }
+  }
+}
+
+.testimonialis {
+  padding: 3.6rem 0;
+  background-color: $color-white;
+
+  .swiper-pagination {
+    position: static;
+
+    .swiper-pagination-bullet {
+      width: 1.3rem;
+      height: 1.3rem;
+      margin: 0 0.7rem;
+      background-color: $color-sonic-silver;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $color-jet;
+    }
+  }
+
+  &__content {
+    max-width: 100rem;
+    margin: 0 auto;
+    user-select: none;
+  }
+
+  &__title {
+    margin-bottom: 8rem;
+    font-size: 2.6rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-dark-liver;
+
+    @include breakpoint($mobile-width) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__text {
+    font-size: 2rem;
+    text-align: center;
+    color: $color-sonic-silver;
+  }
+
+  &__author {
+    display: block;
+    margin: 5rem 0 4rem;
+    font-family: $Lato-Bold;
+    font-size: 1.6rem;
+    text-align: center;
+    color: $color-dark-liver;
+
+    @include breakpoint($mobile-width) {
+      margin: 2rem 0 3rem;
+    }
+  }
+}
+
+.about {
+  background-color: $color-black-olive;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include breakpoint($mobile-width) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include breakpoint($mobile-width) {
+      height: 25rem;
+    }
+  }
+
+  &__content {
+    padding: 6rem 4rem;
+
+    @include breakpoint($mobile-width) {
+      padding: 2rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 6rem;
+    font-family: $Lato-Bold;
+    font-size: 3rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+    color: $color-white;
+
+    @include breakpoint($mobile-width) {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+  }
+
+  &__text {
+    margin-bottom: 4.2rem;
+    font-size: 1.6rem;
+    line-height: 2;
+    color: $color-bright-gray;
+
+    @include breakpoint($mobile-width) {
+      margin-bottom: 3.2rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__link {
+    color: $color-white;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $color-green-sheen;
+    }
+  }
+}
+
+.call-to {
+  padding-top: 10rem;
+
+  @include breakpoint($mobile-width) {
+    padding-top: 5rem;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 1.1rem;
+    font-family: $Lato-Bold;
+    font-size: 3.4rem;
+    word-spacing: 0.4rem;
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-dim-gray;
+
+    @include breakpoint($tablet-width) {
+      font-size: 2.8rem;
+    }
+
+    @include breakpoint($mobile-width) {
+      font-size: 2rem;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 4.5rem;
+    font-size: 1.7rem;
+    text-align: center;
+    color: $color-gray;
+
+    @include breakpoint($mobile-width) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__link {
+    padding: 1.9rem 6rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: $color-white;
+    background-color: $color-green-sheen;
+    transition: all 0.3s ease-in-out;
+
+    @include breakpoint($mobile-width) {
+      padding: 1.3rem 5rem;
+    }
+
+    &:hover {
+      background-color: $color-green;
+    }
+  }
+}
+
+.footer {
+  padding-top: 9rem;
+  padding-bottom: 9.5rem;
+  border-top: 1px solid $color-bright-gray;
+  background-color: $color-cultured;
+
+  @include breakpoint($tablet-width) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @include breakpoint($mobile-width) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-bottom: 3rem;
+
+    @include breakpoint($mobile-width) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__logo-link {
+    display: block;
+  }
+
+  &__copyright {
+    font-size: 1.4rem;
+    text-align: center;
+    color: $color-jet;
+  }
+
+  &__copyright-link {
+    font-family: $Lato-Bold;
+    color: $color-jet;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $color-green-sheen;
+    }
+  }
+}
+
+.vertical-line {
+  width: 1px;
+  height: 10rem;
+  margin: 0 auto;
+  background-color: $color-bright-gray;
+
+  @include breakpoint($mobile-width) {
+    height: 5rem;
+  }
+}
+
+.gorizontal-line {
+  height: 1px;
+  width: 1.3rem;
+  margin: 0 auto;
+  background-color: $color-bright-gray;
+}
